@@ -12,14 +12,14 @@ export default function DrawerLayout() {
             screenOptions={{
                 headerShown: false,
                 drawerStyle: {
-                    backgroundColor: isDark ? '#1f2937' : '#fff', // Dark mode background
+                    backgroundColor: isDark ? '#1d314eff' : '#fff', 
                     width: 250,
                 },
                 drawerActiveTintColor: '#F4B400',
                 drawerInactiveTintColor: isDark ? '#d1d5db' : '#555',
                 drawerItemStyle: {
                     borderBottomWidth: StyleSheet.hairlineWidth,
-                    borderBottomColor: isDark ? '#374151' : '#e5e7eb', // Dark/light separator
+                    borderBottomColor: isDark ? '#374151' : '#e5e7eb', 
                 },
             }}
             drawerContent={(props) => <SidebarContent {...props} />}

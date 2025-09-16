@@ -1,8 +1,8 @@
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
-import { Pressable, StyleSheet, View, ScrollView, Alert, useColorScheme } from 'react-native';
+import { Pressable, StyleSheet, View, ScrollView, Alert, useColorScheme, StatusBar } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { Picker } from '@react-native-picker/picker';
@@ -98,10 +98,11 @@ export default function GetStartTab() {
   return (
     <LinearGradient
       colors={
-        isDark ? ['#111827', '#1f2937'] : ['#F7F4EF', '#ffeac6ff']
+      isDark ? ['#141b2bff', '#09111dff'] : ['#F7F4EF', '#ffeac6ff']
       }
       style={{ flex: 1 }}
     >
+      <StatusBar />
       <ScrollView
         contentContainerStyle={{ flexGrow: 1 }}
         keyboardShouldPersistTaps="handled"
@@ -234,18 +235,9 @@ export default function GetStartTab() {
                 : 'කරුණාකර සියල්ල තෝරන්න'}
             </ThemedText>
 
-            {/* Next Button */}
             <CustomButton
               title="Next"
-              righticon={
-                <Ionicons
-                  name="arrow-forward"
-                  size={20}
-                  color="#fff"
-                  style={{ marginRight: 8 }}
-                />
-              }
-              style={{ marginTop: 20, marginBottom: 80 }}
+              style={{ marginTop: 40, marginBottom: 80  }}
               pressedStyle={{ backgroundColor: isDark ? '#333' : '#000' }}
               onPress={() => {
                 if (selectedExam && selectedCategory && selectedPaper) {

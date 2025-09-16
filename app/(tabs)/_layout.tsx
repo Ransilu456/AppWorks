@@ -16,7 +16,7 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         headerShown: false,
-        tabBarShowLabel: false, // We'll render our own labels
+        tabBarShowLabel: false, 
         tabBarStyle: {
           position: "absolute",
           left: 16,
@@ -34,7 +34,7 @@ export default function TabLayout() {
           borderTopWidth: 0,
         },
         tabBarActiveTintColor: "#FF9500",
-        tabBarInactiveTintColor: isDark ? "#aaa" : "#8E8E93",
+        tabBarInactiveTintColor: isDark ? "#ffffffff" : "#10100fff",
         tabBarButton: (props) => (
           <TouchableOpacity
             activeOpacity={0.8}

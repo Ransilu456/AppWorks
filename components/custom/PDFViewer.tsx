@@ -72,7 +72,7 @@ export default function PDFViewerFromAsset({ githubpdfUrl, title }: PDFViewerPro
     return (
       <View style={[styles.fallbackContainer, { backgroundColor: isDark ? "#111" : "#fffaf0" }]}>
         <Ionicons name="alert-circle" size={50} color="#ff4d4f" />
-        <Text style={[styles.fallbackText, { color: "#ff4d4f" }]}>⚠️ {error}</Text>
+       {/*  <Text style={[styles.fallbackText, { color: "#ff4d4f" }]}>⚠️ {error}</Text> */}
         <Text style={[styles.fallbackHint, { color: isDark ? "#ccc" : "#555" }]}>
           Please check your internet connection or try again later.
         </Text>
@@ -213,5 +213,5 @@ const styles = StyleSheet.create({
     marginTop: 12,
     marginBottom: 6,
   },
-  fallbackHint: { fontSize: 14, textAlign: "center" },
+  fallbackHint: { fontSize: 18, lineHeight: 30, textAlign: "center" },
 });

@@ -28,7 +28,7 @@ export default function SevaawaScreen() {
 
   return (
     <LinearGradient
-      colors={isDark ? ['#111827', '#1f2937'] : ['#F7F4EF', '#FFEAC6']}
+      colors={isDark ? ['#111827', '#0c1426ff'] : ['#F7F4EF', '#FFEAC6']}
       style={{ flex: 1 }}
     >
       {/* Menu bar */}

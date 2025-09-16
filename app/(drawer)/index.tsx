@@ -2,7 +2,7 @@ import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import CustomButton from '@/components/custom/CustomButton';
 import { LinearGradient } from 'expo-linear-gradient';
-import { Pressable, StyleSheet, Image, useColorScheme } from 'react-native';
+import { Pressable, StyleSheet, Image, useColorScheme, StatusBar } from 'react-native';
 import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import React from 'react';
@@ -16,8 +16,11 @@ export default function HomeScreen() {
 
   return (
     <LinearGradient
-      colors={isDark ? ['#111827', '#1f2937'] : ['#F7F4EF', '#ffeac6ff']}
+      colors={
+      isDark ? ['#000000ff', '#09111dff'] : ['#F7F4EF', '#ffeac6ff']
+      }
       style={{ flex: 1 }}
+      
     >
       {/* --- Top Menu --- */}
       <ThemedView style={styles.menuBar}>
@@ -69,7 +72,7 @@ export default function HomeScreen() {
         <CustomButton
           title="ආරම්භ කරන්න"
           style={{
-            backgroundColor: isDark ? '#F59E0B' : '#F4B400',
+            backgroundColor: isDark ? '#181719ff' : '#F4B400',
             width: '100%',
             paddingHorizontal: 80,
             paddingVertical: 14,

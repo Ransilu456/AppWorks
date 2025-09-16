@@ -20,7 +20,7 @@ import React from 'react';
 
 export default function PapersTab() {
   const router = useRouter();
-  const colorScheme = useColorScheme(); // light | dark
+  const colorScheme = useColorScheme(); 
   const isDark = colorScheme === 'dark';
 
   const { exam, category, paperTitle, paperLink, part } =
@@ -32,14 +32,6 @@ export default function PapersTab() {
       part?: string;
     }>();
 
-  let displayTitle = paperTitle;
-  if (part) {
-    displayTitle += ` - Part ${part}`;
-  }
-
-  const gradientColors = isDark
-    ? ['#1a1a1a', '#000']
-    : ['#fff9f0', '#ffeac6'];
 
   const styles = getStyles(isDark);
 
@@ -85,8 +77,8 @@ export default function PapersTab() {
 
   if (!exam || !category || !paperTitle) {
     return (
-      <LinearGradient  colors={
-        isDark ? ['#111827', '#1f2937'] : ['#F7F4EF', '#ffeac6ff']
+      <LinearGradient colors={
+      isDark ? ['#141b2bff', '#09111dff'] : ['#F7F4EF', '#ffeac6ff']
       } style={styles.gradient}>
         <ThemedView style={styles.centered}>
           <Ionicons
@@ -99,7 +91,7 @@ export default function PapersTab() {
             📁 ප්‍රශ්න පත්‍රය තෝරා නොමැත.
           </ThemedText>
           <ThemedText style={[styles.subtitle, { color: isDark ? "#aaa" : "#555" }]}>
-            කරනාකර නැවත ගොස් තෝරන්න.
+            කරුණාකර නැවත ගොස් තෝරන්න.
           </ThemedText>
         </ThemedView>
       </LinearGradient>
@@ -107,9 +99,9 @@ export default function PapersTab() {
   }
 
   return (
-    <LinearGradient  colors={
-        isDark ? ['#111827', '#1f2937'] : ['#F7F4EF', '#ffeac6ff']
-      } style={styles.gradient}>
+    <LinearGradient colors={
+      isDark ? ['#141b2bff', '#09111dff'] : ['#F7F4EF', '#ffeac6ff']
+    } style={styles.gradient}>
       <ScrollView contentContainerStyle={{ paddingBottom: 40, backgroundColor: 'transparent' }}>
         <ThemedView style={styles.container}>
 

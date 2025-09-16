@@ -11,7 +11,7 @@ export default function SidebarContent(props: any) {
     return (
         <DrawerContentScrollView
             {...props}
-            style={{ backgroundColor: isDark ? '#1f2937' : '#fff' }}
+            style={{ backgroundColor: isDark ? '#121417ff' : '#fff' }}
         >
             <View style={styles.header}>
                 <Image source={require('@/assets/logo.png')} style={styles.logo} />

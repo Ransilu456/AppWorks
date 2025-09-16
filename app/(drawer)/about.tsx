@@ -12,7 +12,7 @@ export default function AboutScreen() {
 
     return (
         <LinearGradient
-            colors={isDark ? ['#111827', '#1f2937'] : ['#F7F4EF', '#ffeac6ff']}
+            colors={isDark ? ['#000000ff', '#0c1117ff'] : ['#F7F4EF', '#ffeac6ff']}
             style={{ flex: 1 }}
         >
             {/* Header */}
@@ -39,7 +39,7 @@ export default function AboutScreen() {
             <ThemedView
                 style={[
                     styles.card,
-                    { backgroundColor: isDark ? '#1f2937' : 'rgba(255, 255, 255, 0.9)' },
+                    { backgroundColor: isDark ? '#070a13ff' : 'rgba(255, 255, 255, 0.9)' },
                 ]}
             >
                 <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -49,7 +49,6 @@ export default function AboutScreen() {
                         DP Education E - Marketing Paradise
                     </ThemedText>
 
-                    {/* Placeholder Image */}
                     <Image
                         source={require('@/assets/Our_Logo.png')}
                         style={styles.cardImage}
@@ -65,13 +64,12 @@ export default function AboutScreen() {
                     </ThemedText>
                 </View>
 
-                {/* Bottom Version and Footer */}
                 <View style={styles.bottomContainer}>
                     <ThemedText style={[styles.version, { color: isDark ? '#9CA3AF' : '#888' }]}>
                         Version: 1.0.0
                     </ThemedText>
                     <ThemedText style={[styles.footer, { color: isDark ? '#6B7280' : '#AAA' }]}>
-                        © 2025 DP Education. All rights reserved.
+                        © 2025 DP Education.
                     </ThemedText>
                 </View>
             </ThemedView>
@@ -102,10 +100,6 @@ const styles = StyleSheet.create({
         margin: 16,
         padding: 20,
         borderRadius: 20,
-        shadowOpacity: 0.1,
-        shadowOffset: { width: 0, height: 4 },
-        shadowRadius: 8,
-        elevation: 5,
         justifyContent: 'space-between',
         alignItems: 'center',
         overflow: 'hidden',
