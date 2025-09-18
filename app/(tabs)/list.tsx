@@ -8,7 +8,6 @@ import {
   Pressable,
   Alert,
   useColorScheme,
-  
 } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Ionicons } from "@expo/vector-icons";
@@ -16,6 +15,7 @@ import { useRouter, useFocusEffect } from "expo-router";
 import * as FileSystem from "expo-file-system";
 import { ThemedText } from "@/components/ThemedText";
 import { LinearGradient } from "expo-linear-gradient";
+import { ThemedView } from "@/components/ThemedView";
 
 interface DownloadItem {
   title: string;
@@ -30,7 +30,6 @@ export default function DownloadsTab() {
   const colorScheme = useColorScheme();
   const isDark = colorScheme === "dark";
   const styles = getStyles(isDark);
-
 
   useFocusEffect(
     useCallback(() => {
@@ -71,7 +70,10 @@ export default function DownloadsTab() {
     <View
       style={[
         styles.item,
-        { backgroundColor: isDark ? "#070b13ff" : "#fff", borderColor: isDark ? "#333" : "#eee" },
+        {
+          backgroundColor: isDark ? "#000000" : "#fff",
+          borderColor: isDark ? "#222" : "#eee",
+        },
       ]}
     >
       <TouchableOpacity
@@ -90,10 +92,10 @@ export default function DownloadsTab() {
           style={{ marginRight: 12 }}
         />
         <View style={{ flex: 1 }}>
-          <Text style={[styles.title, { color: isDark ? "#eee" : "#222" }]} numberOfLines={1}>
+          <Text style={[styles.title, { color: isDark ? "#fff" : "#222" }]} numberOfLines={1}>
             {item.title}
           </Text>
-          <Text style={[styles.meta, { color: isDark ? "#aaa" : "#777" }]} numberOfLines={1}>
+          <Text style={[styles.meta, { color: isDark ? "#999" : "#777" }]} numberOfLines={1}>
             {item.exam} • {item.category}
           </Text>
         </View>
@@ -105,40 +107,53 @@ export default function DownloadsTab() {
     </View>
   );
 
-  return (
-    <LinearGradient
-      colors={
-      isDark ? ['#141b2bff', '#09111dff'] : ['#F7F4EF', '#ffeac6ff']
-      }
-      style={{ flex: 1 }}
-    >
-      <View style={styles.container}>
-       { /*<ThemedView style={styles.headerContainer}>
-          <Pressable onPress={() => router.push("/(drawer)")} style={styles.backButton}>
-            <Ionicons name="arrow-back" size={28} color={isDark ? "#fff" : "#2E2E2E"} />
-          </Pressable>
-          <ThemedText
-            style={[styles.headerTitle, { color: isDark ? "#fff" : "#2E2E2E" }]}
-          >
-            Downloaded PDFs
-          </ThemedText>
-        </ThemedView>*/}
+  const renderHeader = () =>
+    downloads.length > 0 ? (
+      <View style={styles.header}>
+        <TouchableOpacity style={styles.backBtn} onPress={() => router.back()}>
+          <Ionicons name="arrow-back" size={24} color={isDark ? "#fff" : "#000"} />
+        </TouchableOpacity>
+        <ThemedText style={styles.headerTitle}>ප්‍රශ්න පත්‍ර තොරතුරු</ThemedText>
+        <View style={{ width: 24 }} /> 
+      </View>
+    ) : null;
 
+  return isDark ? (
+    <View style={[styles.container, { backgroundColor: "#000000" }]}>
+     <ThemedView style={{backgroundColor: 'transparent'}}>
+       {renderHeader()}
+     </ThemedView>
+      {downloads.length === 0 ? (
+        <View style={styles.emptyContainer}>
+          <Ionicons name="folder-open" size={60} color="#fac400ff" />
+          <ThemedText style={[styles.emptyText, { color: "#fff" }]}>
+            📁 ප්‍රශ්න පත්‍ර බාගත කර නොමැත.
+          </ThemedText>
+          <ThemedText style={[styles.emptySubText, { color: "#888" }]}>
+            කරුණාකර ප්‍රශ්න බාගත කරගන්න.
+          </ThemedText>
+        </View>
+      ) : (
+        <FlatList
+          data={downloads}
+          renderItem={renderItem}
+          keyExtractor={(item, index) => index.toString()}
+          contentContainerStyle={{ paddingBottom: 20 }}
+          showsVerticalScrollIndicator={false}
+        />
+      )}
+    </View>
+  ) : (
+    <LinearGradient colors={["#F7F4EF", "#ffeac6ff"]} style={{ flex: 1 }}>
+      <View style={styles.container}>
+        {renderHeader()}
         {downloads.length === 0 ? (
           <View style={styles.emptyContainer}>
-            <Ionicons
-              name="folder-open"
-              size={60}
-              color={isDark ? "#fac400ff" : "#fac400ff"}
-            />
-            <ThemedText
-              style={[styles.emptyText, { color: isDark ? "#ffffffff" : "#000000ff" }]}
-            >
+            <Ionicons name="folder-open" size={60} color="#fac400ff" />
+            <ThemedText style={[styles.emptyText, { color: "#000" }]}>
               📁 ප්‍රශ්න පත්‍ර බාගත කර නොමැත.
             </ThemedText>
-            <ThemedText
-              style={[styles.emptySubText, { color: isDark ? "#7f7f7fff" : "#696969ff" }]}
-            >
+            <ThemedText style={[styles.emptySubText, { color: "#696969" }]}>
               කරුණාකර ප්‍රශ්න බාගත කරගන්න.
             </ThemedText>
           </View>
@@ -156,28 +171,31 @@ export default function DownloadsTab() {
   );
 }
 
-
 const getStyles = (isDark: boolean) =>
   StyleSheet.create({
-    container: { flex: 1, paddingHorizontal: 16, paddingTop: 20, backgroundColor: "transparent" },
-    headerContainer: {
+    container: { flex: 1, paddingHorizontal: 16, paddingTop: 20 },
+    header: {
       flexDirection: "row",
       alignItems: "center",
       marginBottom: 16,
-      borderRadius: 45,
+      justifyContent: "space-between",
+      width: "100%",
+      borderRadius: 46,
       paddingHorizontal: 10,
       paddingVertical: 8,
-      backgroundColor: isDark ? '#111' : '#fff',
+      backgroundColor: isDark ? "#0f0f0f" : "#fff",
+      borderWidth: isDark ? 1 : 0,
+      borderColor: isDark ? "#222" : "transparent",
     },
-    backButton: { padding: 8, borderRadius: 8, backgroundColor: "transparent", marginRight: 12 },
+    backBtn: {
+      padding: 8,
+      borderRadius: 10,
+    },
     headerTitle: {
-      fontSize: 22,
+      fontSize: 20,
       fontWeight: "700",
-      flex: 1,
-      textAlign: "center",
-      marginRight: 40,
+      color: isDark ? "#f5f5f5" : "#000",
     },
-
     item: {
       flexDirection: "row",
       alignItems: "center",
@@ -193,7 +211,6 @@ const getStyles = (isDark: boolean) =>
     },
     title: { fontSize: 16, fontWeight: "600" },
     meta: { fontSize: 13, marginTop: 2 },
-
     deleteButton: {
       padding: 8,
       backgroundColor: "#FF3B30",
@@ -202,8 +219,18 @@ const getStyles = (isDark: boolean) =>
       justifyContent: "center",
       alignItems: "center",
     },
-
-    emptyContainer: { flex: 1, justifyContent: "center", alignItems: "center", textAlign: 'center' },
-    emptyText: { fontSize: 24, fontWeight: "600", marginTop: 16, textAlign: 'center', lineHeight: 30 },
+    emptyContainer: {
+      flex: 1,
+      justifyContent: "center",
+      alignItems: "center",
+      textAlign: "center",
+    },
+    emptyText: {
+      fontSize: 24,
+      fontWeight: "600",
+      marginTop: 16,
+      textAlign: "center",
+      lineHeight: 30,
+    },
     emptySubText: { fontSize: 16, marginTop: 4, textAlign: "center" },
   });

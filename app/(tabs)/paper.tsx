@@ -32,7 +32,6 @@ export default function PapersTab() {
       part?: string;
     }>();
 
-
   const styles = getStyles(isDark);
 
   const handleDownload = async () => {
@@ -77,9 +76,12 @@ export default function PapersTab() {
 
   if (!exam || !category || !paperTitle) {
     return (
-      <LinearGradient colors={
-      isDark ? ['#141b2bff', '#09111dff'] : ['#F7F4EF', '#ffeac6ff']
-      } style={styles.gradient}>
+      <LinearGradient
+        colors={
+          isDark ? ['#000000', '#0a0a0a'] : ['#F7F4EF', '#ffeac6ff']
+        }
+        style={styles.gradient}
+      >
         <ThemedView style={styles.centered}>
           <Ionicons
             name="alert-circle-outline"
@@ -99,9 +101,12 @@ export default function PapersTab() {
   }
 
   return (
-    <LinearGradient colors={
-      isDark ? ['#141b2bff', '#09111dff'] : ['#F7F4EF', '#ffeac6ff']
-    } style={styles.gradient}>
+    <LinearGradient
+      colors={
+        isDark ? ['#000000', '#0a0a0a'] : ['#F7F4EF', '#ffeac6ff']
+      }
+      style={styles.gradient}
+    >
       <ScrollView contentContainerStyle={{ paddingBottom: 40, backgroundColor: 'transparent' }}>
         <ThemedView style={styles.container}>
 
@@ -206,7 +211,9 @@ const getStyles = (isDark: boolean) =>
       borderRadius: 46,
       paddingHorizontal: 10,
       paddingVertical: 8,
-      backgroundColor: isDark ? '#111' : '#fff',
+      backgroundColor: isDark ? '#0f0f0f' : '#fff',
+      borderWidth: isDark ? 1 : 0,
+      borderColor: isDark ? '#222' : 'transparent',
     },
     backBtn: {
       padding: 8,
@@ -215,22 +222,24 @@ const getStyles = (isDark: boolean) =>
     headerTitle: {
       fontSize: 20,
       fontWeight: '700',
-      color: isDark ? '#fff' : '#000',
+      color: isDark ? '#f5f5f5' : '#000',
     },
     title: { fontSize: 24, fontWeight: '700', textAlign: 'center', lineHeight: 30 },
     subtitle: { fontSize: 16, marginTop: 6, textAlign: 'center', lineHeight: 30 },
-    info: { fontSize: 16, marginLeft: 10, color: isDark ? '#ddd' : '#333' },
+    info: { fontSize: 16, marginLeft: 10, color: isDark ? '#bbb' : '#333' },
     card: {
       width: '100%',
       borderRadius: 16,
       padding: 20,
-      shadowColor: '#00000020',
-      shadowOpacity: 0.12,
+      shadowColor: '#000',
+      shadowOpacity: 0.25,
       shadowOffset: { width: 0, height: 3 },
       shadowRadius: 6,
       elevation: 4,
       marginBottom: 20,
-      backgroundColor: isDark ? '#1e1e1e' : '#fff',
+      backgroundColor: isDark ? '#111' : '#fff',
+      borderWidth: isDark ? 1 : 0,
+      borderColor: isDark ? '#222' : 'transparent',
     },
     row: {
       flexDirection: 'row',
@@ -240,7 +249,7 @@ const getStyles = (isDark: boolean) =>
     },
     separator: {
       height: 1,
-      backgroundColor: '#ececec20',
+      backgroundColor: isDark ? '#333' : '#ececec',
       marginVertical: 6,
     },
     button: {
@@ -257,7 +266,7 @@ const getStyles = (isDark: boolean) =>
     },
     downloadButton: {
       marginBottom: 40,
-      backgroundColor: isDark ? '#222' : '#000',
+      backgroundColor: isDark ? '#000' : '#000',
     },
     imageWrapper: {
       width: '100%',
@@ -265,7 +274,7 @@ const getStyles = (isDark: boolean) =>
       borderRadius: 24,
       overflow: 'hidden',
       shadowColor: '#000',
-      shadowOpacity: 0.15,
+      shadowOpacity: 0.25,
       shadowRadius: 10,
       elevation: 6,
     },
@@ -279,7 +288,7 @@ const getStyles = (isDark: boolean) =>
     overlay: {
       borderRadius: 16,
       padding: 16,
-      backgroundColor: Platform.OS === 'android' ? 'rgba(14, 14, 14, 0.15)' : 'transparent',
+      backgroundColor: Platform.OS === 'android' ? 'rgba(0,0,0,0.3)' : 'transparent',
     },
     PaperName: {
       fontSize: 22,
@@ -289,7 +298,7 @@ const getStyles = (isDark: boolean) =>
     },
     PdfCategory: {
       fontSize: 15,
-      color: '#ddd',
+      color: '#ccc',
       marginTop: 2,
       backgroundColor: 'transparent',
     },

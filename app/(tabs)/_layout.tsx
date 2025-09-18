@@ -16,25 +16,26 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         headerShown: false,
-        tabBarShowLabel: false, 
+        tabBarShowLabel: false,
         tabBarStyle: {
           position: "absolute",
           left: 16,
           right: 16,
           height: 70,
-          backgroundColor: isDark ? "#111827" : "#ffffff",
+          backgroundColor: isDark ? "#000000ff" : "#ffffff",
           borderRadius: 20,
           borderBottomRightRadius: 0,
           borderBottomLeftRadius: 0,
           elevation: 10,
           shadowColor: "#000",
-          shadowOpacity: isDark ? 0.4 : 0.08,
+          shadowOpacity: isDark ? 0.5 : 0.08,
           shadowOffset: { width: 0, height: 4 },
           shadowRadius: 10,
-          borderTopWidth: 0,
+          borderTopWidth: 2,
+          borderTopColor: "#e0e0e0ff"
         },
-        tabBarActiveTintColor: "#FF9500",
-        tabBarInactiveTintColor: isDark ? "#ffffffff" : "#10100fff",
+        tabBarActiveTintColor: isDark ? "#FFD700" : "#FF9500",
+        tabBarInactiveTintColor: isDark ? "#E5E7EB" : "#10100fff",
         tabBarButton: (props) => (
           <TouchableOpacity
             activeOpacity={0.8}
@@ -65,7 +66,7 @@ export default function TabLayout() {
                   color={color}
                 />
               </View>
-              <Text style={[styles.label, { color }]}>Home</Text>
+              <Text style={[styles.label, { color }]} >Home</Text>
             </View>
           ),
         }}
@@ -91,7 +92,7 @@ export default function TabLayout() {
                   color={color}
                 />
               </View>
-              <Text style={[styles.label, { color }]}>Papers</Text>
+              <Text style={[styles.label, { color }]} >Papers</Text>
             </View>
           ),
         }}
@@ -117,7 +118,7 @@ export default function TabLayout() {
                   color={color}
                 />
               </View>
-              <Text style={[styles.label, { color }]}>Downloads</Text>
+              <Text style={[styles.label, { color }]} >Downloads</Text>
             </View>
           ),
         }}
@@ -145,7 +146,7 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontWeight: "600",
     position: "absolute",
-    top: 40, 
+    top: 40,
     textAlign: "center",
     width: "100%",
   },

@@ -28,7 +28,7 @@ export default function SevaawaScreen() {
 
   return (
     <LinearGradient
-      colors={isDark ? ['#111827', '#0c1426ff'] : ['#F7F4EF', '#FFEAC6']}
+      colors={isDark ? ['#000000', '#0a0a0a'] : ['#F7F4EF', '#FFEAC6']}
       style={{ flex: 1 }}
     >
       {/* Menu bar */}
@@ -37,7 +37,7 @@ export default function SevaawaScreen() {
           onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}
           style={[
             styles.menuButton,
-            { backgroundColor: isDark ? 'rgba(0,0,0,0.4)' : 'rgba(255,255,255,0.6)' },
+            { backgroundColor: isDark ? 'rgba(255,255,255,0.1)' : 'rgba(255,255,255,0.6)' },
           ]}
         >
           <Ionicons
@@ -76,8 +76,11 @@ export default function SevaawaScreen() {
               style={[
                 styles.serviceCard,
                 {
-                  backgroundColor: isDark ? '#1f2937' : '#FFF',
-                  shadowColor: isDark ? '#000000aa' : '#5050502f',
+                  backgroundColor: isDark ? '#111111' : '#FFF',
+                  shadowColor: isDark ? '#000' : '#000',
+                  shadowOpacity: isDark ? 0.6 : 0.1,
+                  shadowOffset: { width: 0, height: 3 },
+                  shadowRadius: 6,
                 },
               ]}
             >
@@ -118,7 +121,7 @@ const styles = StyleSheet.create({
   },
   title: {
     marginTop: 5,
-    marginBottom: 12,
+    marginBottom: 16,
     fontSize: 28,
     fontWeight: '700',
     textAlign: 'center',
@@ -141,9 +144,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 16,
     borderRadius: 16,
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.15,
-    shadowRadius: 10,
     elevation: 4,
   },
   serviceText: {

@@ -98,19 +98,29 @@ export default function GetStartTab() {
   return (
     <LinearGradient
       colors={
-      isDark ? ['#141b2bff', '#09111dff'] : ['#F7F4EF', '#ffeac6ff']
+        isDark ? ['#000000', '#000000'] : ['#F7F4EF', '#ffeac6ff']
       }
       style={{ flex: 1 }}
     >
-      <StatusBar />
+     
       <ScrollView
         contentContainerStyle={{ flexGrow: 1 }}
         keyboardShouldPersistTaps="handled"
         showsVerticalScrollIndicator={false}
       >
         <ThemedView style={styles.headerContainer}>
-          <Pressable onPress={() => router.push('/(drawer)')} style={[styles.backButton, isDark && { backgroundColor: 'rgba(0,0,0,0.4)' }]}>
-            <Ionicons name="arrow-back" size={28} color={isDark ? '#fff' : '#2E2E2E'} />
+          <Pressable
+            onPress={() => router.push('/(drawer)')}
+            style={[
+              styles.backButton,
+              isDark && { backgroundColor: 'rgba(255,255,255,0.08)' },
+            ]}
+          >
+            <Ionicons
+              name="arrow-back"
+              size={28}
+              color={isDark ? '#fff' : '#2E2E2E'}
+            />
           </Pressable>
         </ThemedView>
 
@@ -132,7 +142,7 @@ export default function GetStartTab() {
             </ThemedText>
 
             {/* Exam Dropdown */}
-            <View style={[styles.dropdownWrapper, isDark && { backgroundColor: '#1f2937', borderColor: '#374151' }]}>
+            <View style={[styles.dropdownWrapper, isDark && { backgroundColor: '#111', borderColor: '#333' }]}>
               <Picker
                 selectedValue={selectedExam}
                 onValueChange={(itemValue) => {
@@ -151,7 +161,7 @@ export default function GetStartTab() {
             </View>
 
             {/* Category Dropdown */}
-            <View style={[styles.dropdownWrapper, isDark && { backgroundColor: '#1f2937', borderColor: '#374151' }]}>
+            <View style={[styles.dropdownWrapper, isDark && { backgroundColor: '#111', borderColor: '#333' }]}>
               <Picker
                 selectedValue={selectedCategory}
                 onValueChange={(itemValue) => {
@@ -171,7 +181,7 @@ export default function GetStartTab() {
 
             {/* Subcategory Dropdown */}
             {needsSubcategory && (
-              <View style={[styles.dropdownWrapper, isDark && { backgroundColor: '#1f2937', borderColor: '#374151' }]}>
+              <View style={[styles.dropdownWrapper, isDark && { backgroundColor: '#111', borderColor: '#333' }]}>
                 <Picker
                   selectedValue={selectedSubcategory}
                   onValueChange={(itemValue) => setSelectedSubcategory(itemValue)}
@@ -184,7 +194,7 @@ export default function GetStartTab() {
             )}
 
             {/* Paper Dropdown (Year) */}
-            <View style={[styles.dropdownWrapper, isDark && { backgroundColor: '#1f2937', borderColor: '#374151' }]}>
+            <View style={[styles.dropdownWrapper, isDark && { backgroundColor: '#111', borderColor: '#333' }]}>
               <Picker
                 selectedValue={selectedYear}
                 onValueChange={(itemValue) => {
@@ -206,7 +216,7 @@ export default function GetStartTab() {
 
             {/* Part Dropdown */}
             {availableParts.length > 0 && (
-              <View style={[styles.dropdownWrapper, isDark && { backgroundColor: '#1f2937', borderColor: '#374151' }]}>
+              <View style={[styles.dropdownWrapper, isDark && { backgroundColor: '#111', borderColor: '#333' }]}>
                 <Picker
                   selectedValue={selectedPart}
                   onValueChange={setSelectedPart}
@@ -237,7 +247,7 @@ export default function GetStartTab() {
 
             <CustomButton
               title="Next"
-              style={{ marginTop: 40, marginBottom: 80  }}
+              style={{ marginTop: 40, marginBottom: 80 }}
               pressedStyle={{ backgroundColor: isDark ? '#333' : '#000' }}
               onPress={() => {
                 if (selectedExam && selectedCategory && selectedPaper) {
@@ -265,8 +275,8 @@ export default function GetStartTab() {
                   });
                 } else {
                   Alert.alert(
-                    "සැලකිය යුතුයි",
-                    "කරුණාකර විභාගය, කාණ්ඩය, සහ පත්‍රය තෝරන්න."
+                    'සැලකිය යුතුයි',
+                    'කරුණාකර විභාගය, කාණ්ඩය, සහ පත්‍රය තෝරන්න.'
                   );
                 }
               }}
