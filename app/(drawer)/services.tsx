@@ -77,10 +77,6 @@ export default function SevaawaScreen() {
                 styles.serviceCard,
                 {
                   backgroundColor: isDark ? '#111111' : '#FFF',
-                  shadowColor: isDark ? '#000' : '#000',
-                  shadowOpacity: isDark ? 0.6 : 0.1,
-                  shadowOffset: { width: 0, height: 3 },
-                  shadowRadius: 6,
                 },
               ]}
             >
@@ -144,7 +140,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 16,
     borderRadius: 16,
-    elevation: 4,
   },
   serviceText: {
     marginLeft: 12,

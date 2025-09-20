@@ -3,7 +3,7 @@ import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Platform, View } from 'react-native';
+/* import { Platform, View } from 'react-native'; */
 import { LinearGradient } from 'expo-linear-gradient';
 
 import 'react-native-reanimated';
@@ -23,28 +23,25 @@ export default function RootLayout() {
 
   return (
     <ThemeProvider value={isDark ? DarkTheme : DefaultTheme}>
-      {/* --- StatusBar --- */}
+
       <StatusBar
-        style={isDark ? 'light' : 'dark'} // text/icons color
-        backgroundColor={isDark ? '#000000' : '#F7F4EF'} // Android bg
-        translucent={false}
+        style={isDark ? 'light' : 'dark'} 
       />
 
-      {Platform.OS === 'android' && (
+     {/* {Platform.OS === 'android' && (
         <View
           style={{
-            height: StatusBar.currentHeight, // reserve space for status bar
+            height: StatusBar.currentHeight, 
             backgroundColor: isDark ? '#000000' : '#F7F4EF',
           }}
         />
-      )}
+      )}*/}
 
-      {/* --- Background gradient (light/dark adaptive) --- */}
       <LinearGradient
         colors={
           isDark
-            ? ['#000000', '#121212'] // dark mode gradient
-            : ['#F7F4EF', '#FFEAC6'] // light mode gradient
+            ? ['#000000', '#121212'] 
+            : ['#F7F4EF', '#FFEAC6'] 
         }
         style={{ flex: 1 }}
       >

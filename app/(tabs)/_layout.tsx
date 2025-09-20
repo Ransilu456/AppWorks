@@ -31,8 +31,7 @@ export default function TabLayout() {
           shadowOpacity: isDark ? 0.5 : 0.08,
           shadowOffset: { width: 0, height: 4 },
           shadowRadius: 10,
-          borderTopWidth: 2,
-          borderTopColor: "#e0e0e0ff"
+          borderWidth: 0
         },
         tabBarActiveTintColor: isDark ? "#FFD700" : "#FF9500",
         tabBarInactiveTintColor: isDark ? "#E5E7EB" : "#10100fff",

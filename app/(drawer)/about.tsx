@@ -1,6 +1,6 @@
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
-import { Pressable, StyleSheet, View, Image, useColorScheme } from "react-native";
+import { Pressable, StyleSheet, Image, useColorScheme } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
 import { useNavigation, DrawerActions } from '@react-navigation/native';
@@ -32,7 +32,7 @@ export default function AboutScreen() {
           මෙම යෙදුම පිළිබඳව
         </ThemedText>
 
-        <View style={{ width: 28 }} /> {/* Spacer */}
+        <ThemedView style={{ width: 28 }} />
       </ThemedView>
 
       {/* Content Card */}
@@ -40,43 +40,64 @@ export default function AboutScreen() {
         style={[
           styles.card,
           {
-            backgroundColor: isDark ? '#121212' : 'rgba(255, 255, 255, 0.95)',
-            shadowColor: isDark ? '#000' : '#000',
-            shadowOpacity: isDark ? 0.8 : 0.1,
+            backgroundColor: isDark ? "rgba(255,255,255,0.05)" : "#fff"
           },
         ]}
       >
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-          <ThemedText
-            style={[styles.cardTitle, { color: isDark ? '#f9fafb' : '#333' }]}
-          >
-            DP Education • E - Marketing Paradise
-          </ThemedText>
-
+        {/* Top Section */}
+        <ThemedView style={{ alignItems: "center", padding: 10, backgroundColor: 'transparent' }}>
           <Image
-            source={require('@/assets/Our_Logo.png')}
+            source={require("@/assets/Our_Logo.png")}
             style={styles.cardImage}
             resizeMode="contain"
           />
 
           <ThemedText
-            style={[styles.cardText, { color: isDark ? '#d1d5db' : '#555' }]}
+            style={[
+              styles.cardTitle,
+              { color: isDark ? "#f9fafb" : "#222" },
+            ]}
+          >
+            DP Education • E - Marketing Paradise
+          </ThemedText>
+
+          <ThemedText
+            style={[
+              styles.cardText,
+              { color: isDark ? "#d1d5db" : "#555" },
+            ]}
           >
             මෙම යෙදුම ශ්‍රී ලංකා රාමඤ්ඤය මහා නිකාය මඟින් පවත්වන ශ්‍රී ලංකා
             ත්‍රිපිටක විභාගයට පෙනී සිටින සියලු දෙනාට අවශ්‍ය පසුගිය ප්‍රශ්න
             පත්‍ර ලබා දීම සිදු කරයි.
           </ThemedText>
-        </View>
+        </ThemedView>
 
-        <View style={styles.bottomContainer}>
-          <ThemedText style={[styles.version, { color: isDark ? '#9CA3AF' : '#888' }]}>
+        {/* Divider */}
+        <ThemedView
+          style={{
+            height: 1,
+            backgroundColor: isDark ? "rgba(255,255,255,0.1)" : "#e5e7eb",
+            width: "90%",
+            marginVertical: 12,
+          }}
+        />
+
+        {/* Footer */}
+        <ThemedView style={styles.bottomContainer}>
+          <ThemedText
+            style={[styles.version, { color: isDark ? "#9CA3AF" : "#666" }]}
+          >
             Version: 1.0.0
           </ThemedText>
-          <ThemedText style={[styles.footer, { color: isDark ? '#6B7280' : '#AAA' }]}>
+          <ThemedText
+            style={[styles.footer, { color: isDark ? "#6B7280" : "#AAA" }]}
+          >
             © 2025 DP Education.
           </ThemedText>
-        </View>
+        </ThemedView>
       </ThemedView>
+
     </LinearGradient>
   );
 }
@@ -90,42 +111,41 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     borderRadius: 10,
     backgroundColor: 'transparent',
-  },
+  }, 
   card: {
     flex: 1,
     margin: 16,
-    padding: 24,
+    padding: 20,
     borderRadius: 20,
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    overflow: 'hidden',
-    shadowOffset: { width: 0, height: 4 },
-    shadowRadius: 8,
-    elevation: 6,
+    justifyContent: "space-between",
+    alignItems: "center",
+    overflow: "hidden",
   },
   cardTitle: {
-    fontSize: 22,
-    fontWeight: '700',
-    textAlign: 'center',
-    marginBottom: 20,
+    fontSize: 20,
+    fontWeight: "700",
+    textAlign: "center",
+    marginTop: 32,
+    marginBottom: 38,
   },
   cardImage: {
-    width: 300,
+    width: 200,
     height: 200,
-    marginBottom: 16,
-    borderRadius: 12,
+    marginBottom: 10,
+    borderRadius: 16,
   },
   cardText: {
-    fontSize: 16,
-    lineHeight: 26,
-    textAlign: 'center',
-    fontWeight: '500',
-    marginTop: 10,
-    paddingHorizontal: 10,
+    fontSize: 15,
+    lineHeight: 24,
+    textAlign: "center",
+    fontWeight: "400",
+    marginTop: 6,
+    paddingHorizontal: 14,
+    marginBottom: 64,
   },
   bottomContainer: {
-    alignItems: 'center',
-    marginBottom: 12,
+    alignItems: "center",
+    paddingVertical: 8,
   },
   version: {
     fontSize: 14,
