@@ -8,6 +8,7 @@ import {
   Platform,
   ScrollView,
   useColorScheme,
+  ActivityIndicator,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useLocalSearchParams, useRouter } from 'expo-router';
@@ -16,39 +17,73 @@ import * as FileSystem from 'expo-file-system';
 import { Ionicons } from '@expo/vector-icons';
 import { BlurView } from 'expo-blur';
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import React from 'react';
+import { useState } from 'react';
 
 export default function PapersTab() {
   const router = useRouter();
-  const colorScheme = useColorScheme(); 
+  const colorScheme = useColorScheme();
   const isDark = colorScheme === 'dark';
 
-  const { exam, category, paperTitle, paperLink, part } =
+  const [downloading, setDownloading] = useState(false);
+  const [progress, setProgress] = useState(0);
+
+  const { exam, category, paperTitle, paperLink, part, year } =
     useLocalSearchParams<{
       exam: string;
       category: string;
       paperTitle: string;
       paperLink: string;
       part?: string;
+      year?: string;
     }>();
 
   const styles = getStyles(isDark);
 
   const handleDownload = async () => {
     try {
-      const fileName = paperTitle.replace(/\s+/g, "_") + ".pdf";
+      setDownloading(true);
+      setProgress(0);
+
+      const safe = (val?: string) => val ? val.replace(/\s+/g, "_") : "";
+
+      // Base filename with details
+      const baseName = [
+        safe(paperTitle),
+        safe(category),
+        safe(year),
+        safe(part),
+      ].filter(Boolean).join("_");
+
+      // Add timestamp to avoid overwrite
+      const uniqueSuffix = Date.now();
+      const fileName = `${baseName}_${uniqueSuffix}.pdf`;
+
       const downloadUri = FileSystem.documentDirectory + fileName;
 
-      const downloadResult = await FileSystem.downloadAsync(paperLink, downloadUri);
-      if (!downloadResult || downloadResult.status !== 200) {
-        throw new Error("Download failed with status " + downloadResult?.status);
+      const downloadResumable = FileSystem.createDownloadResumable(
+        paperLink,
+        downloadUri,
+        {},
+        (downloadProgress) => {
+          const pct =
+            downloadProgress.totalBytesWritten /
+            downloadProgress.totalBytesExpectedToWrite;
+          setProgress(pct);
+        }
+      );
+
+      const result = await downloadResumable.downloadAsync();
+      if (!result || result.status !== 200) {
+        throw new Error("Download failed with status " + result?.status);
       }
 
       const newEntry = {
         title: paperTitle,
         category,
         exam,
-        uri: downloadResult.uri,
+        uri: result.uri, // ✅ unique and correct path
+        part,
+        year,
         date: new Date().toISOString(),
       };
 
@@ -57,32 +92,25 @@ export default function PapersTab() {
       downloads.push(newEntry);
       await AsyncStorage.setItem("downloads", JSON.stringify(downloads));
 
-      alert("📁 File downloaded successfully!");
+      alert("✅ File downloaded successfully!");
     } catch (err: any) {
       console.error("❌ Error downloading file:", err);
-
-      if (
-        err?.message?.includes("Unable to resolve host") ||
-        err?.message?.includes("Network request failed")
-      ) {
-        alert("⚠️ No internet connection. Please check your network and try again.");
-      } else if (err?.message?.includes("status")) {
-        alert("⚠️ Could not download the file (server error). Try again later.");
-      } else {
-        alert("❌ Failed to download the file. Please try again.");
-      }
+      alert("❌ Failed to download the file. Please try again.");
+    } finally {
+      setDownloading(false);
+      setProgress(0);
     }
   };
+
 
   if (!exam || !category || !paperTitle) {
     return (
       <LinearGradient
-        colors={
-          isDark ? ['#000000', '#0a0a0a'] : ['#F7F4EF', '#ffeac6ff']
-        }
+        colors={isDark ? ['#000000', '#0a0a0a'] : ['#F7F4EF', '#ffeac6ff']}
         style={styles.gradient}
       >
         <ThemedView style={styles.centered}>
+
           <Ionicons
             name="alert-circle-outline"
             size={70}
@@ -99,6 +127,7 @@ export default function PapersTab() {
       </LinearGradient>
     );
   }
+
 
   return (
     <LinearGradient
@@ -166,17 +195,44 @@ export default function PapersTab() {
             onPress={() => {
               const encodedLink = encodeURIComponent(paperLink);
               const encodedTitle = encodeURIComponent(paperTitle);
-              router.push(`/pdf_viewer?paperLink=${encodedLink}&paperTitle=${encodedTitle}`);
+              const encodedYear = encodeURIComponent(year || "");
+              const encodedPart = encodeURIComponent(part || "");
+
+              router.push(
+                `/pdf_viewer?paperLink=${encodedLink}&paperTitle=${encodedTitle}&year=${encodedYear}&part=${encodedPart}`
+              );
             }}
             pressedStyle={{ backgroundColor: isDark ? '#444' : '#333' }}
           />
 
           <CustomButton
-            title="පත්‍රය බාගන්න"
-            icon={<Ionicons name="download" size={20} color="#fff" style={{ marginRight: 18 }} />}
-            style={[styles.button, styles.downloadButton]}
+            title={
+              downloading
+                ? progress > 0
+                  ? `බාගැනේ (${Math.round(progress * 100)}%)`
+                  : "බාගැනේ..."
+                : "පත්‍රය බාගන්න"
+            }
+            icon={
+              downloading ? (
+                <ActivityIndicator size="small" color="#fff" style={{ marginRight: 12 }} />
+              ) : (
+                <Ionicons
+                  name="download"
+                  size={20}
+                  color="#fff"
+                  style={{ marginRight: 12 }}
+                />
+              )
+            }
+            style={[
+              styles.button,
+              styles.downloadButton,
+              downloading ? { opacity: 0.7 } : {},
+            ]}
             onPress={handleDownload}
-            pressedStyle={{ backgroundColor: isDark ? '#111' : '#222' }}
+            disabled={downloading}
+            pressedStyle={{ backgroundColor: isDark ? "#111" : "#222" }}
           />
         </ThemedView>
       </ScrollView>
@@ -231,11 +287,6 @@ const getStyles = (isDark: boolean) =>
       width: '100%',
       borderRadius: 16,
       padding: 20,
-      shadowColor: '#000',
-      shadowOpacity: 0.25,
-      shadowOffset: { width: 0, height: 3 },
-      shadowRadius: 6,
-      elevation: 4,
       marginBottom: 20,
       backgroundColor: isDark ? '#111' : '#fff',
       borderWidth: isDark ? 1 : 0,

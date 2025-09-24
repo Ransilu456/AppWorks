@@ -14,6 +14,7 @@ export default function PDFViewerScreen() {
     : undefined;
 
   const part = params.part as string | undefined;
+  const year = params.year as string | undefined;
 
   const fullTitle = paperTitle
     ? part
@@ -23,7 +24,7 @@ export default function PDFViewerScreen() {
 
   return (
     <LinearGradient colors={["#F7F4EF", "#ffeac6ff"]} style={{ flex: 1 }}>
-      <PDFViewerFromAsset githubpdfUrl={paperLink || ""} title={fullTitle} />
+      <PDFViewerFromAsset githubpdfUrl={paperLink || ""} title={fullTitle}  year={year}/>
     </LinearGradient>
   );
 }

@@ -7,6 +7,7 @@ interface CustomButtonProps {
   style?: ViewStyle | ViewStyle[];
   pressedStyle?: ViewStyle;
   icon?: ReactNode;
+  disabled?: boolean;
   righticon?: ReactNode;
 }
 
@@ -17,6 +18,7 @@ export default function CustomButton({
   pressedStyle,
   icon,
   righticon,
+   disabled = false,
 }: CustomButtonProps) {
   return (
     <Pressable
@@ -24,6 +26,7 @@ export default function CustomButton({
         styles.button,
         pressed && (pressedStyle || styles.buttonPressed),
         style,
+        disabled && { opacity: 0.6 },
       ]}
       onPress={onPress}
     >

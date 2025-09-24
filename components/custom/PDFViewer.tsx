@@ -16,9 +16,11 @@ import Pdf from "react-native-pdf";
 interface PDFViewerProps {
   githubpdfUrl: string;
   title?: string;
+  year?: string;
+  part?: string;
 }
 
-export default function PDFViewerFromAsset({ githubpdfUrl, title }: PDFViewerProps) {
+export default function PDFViewerFromAsset({ githubpdfUrl, title, year, part }: PDFViewerProps) {
   const router = useRouter();
   const colorScheme = useColorScheme();
   const isDark = colorScheme === "dark";
@@ -72,7 +74,7 @@ export default function PDFViewerFromAsset({ githubpdfUrl, title }: PDFViewerPro
     return (
       <View style={[styles.fallbackContainer, { backgroundColor: isDark ? "#111" : "#fffaf0" }]}>
         <Ionicons name="alert-circle" size={50} color="#ff4d4f" />
-       {/*  <Text style={[styles.fallbackText, { color: "#ff4d4f" }]}>⚠️ {error}</Text> */}
+        {/*  <Text style={[styles.fallbackText, { color: "#ff4d4f" }]}>⚠️ {error}</Text> */}
         <Text style={[styles.fallbackHint, { color: isDark ? "#ccc" : "#555" }]}>
           Please check your internet connection or try again later.
         </Text>
@@ -92,12 +94,18 @@ export default function PDFViewerFromAsset({ githubpdfUrl, title }: PDFViewerPro
   return (
     <View style={[styles.container, { backgroundColor: isDark ? "#111" : "#fdfaf6" }]}>
       {/* Header */}
-      <View style={[styles.header, { backgroundColor: isDark ? "#1f2937" : "#ffa72bff" }]}>
+      <View style={[styles.header, { backgroundColor: isDark ? "#111" : "#000000ff" }]}>
         <Pressable onPress={() => router.back()} style={styles.backButton}>
           <Ionicons name="arrow-back" size={24} color="#fff" />
         </Pressable>
-        <Text style={styles.headerTitle} numberOfLines={1}>
+        <Text style={styles.headerTitle}>
           {title}
+        </Text>
+        <Text style={styles.subtitle}>
+          {year}
+        </Text>
+        <Text style={styles.subtitle}>
+          {part}
         </Text>
       </View>
 
@@ -127,31 +135,30 @@ export default function PDFViewerFromAsset({ githubpdfUrl, title }: PDFViewerPro
 
 const styles = StyleSheet.create({
   container: { flex: 1 },
-
   header: {
     flexDirection: "row",
     alignItems: "center",
     paddingHorizontal: 14,
     paddingVertical: 16,
-    elevation: 4,
-    shadowColor: "#000",
-    shadowOpacity: 0.2,
-    shadowOffset: { width: 0, height: 2 },
-    shadowRadius: 3,
+
   },
   backButton: {
     marginRight: 12,
     padding: 6,
     borderRadius: 8,
-    backgroundColor: "rgba(255,255,255,0.2)",
+    backgroundColor: "rgba(255, 255, 255, 0.04)",
   },
   headerTitle: {
-    fontSize: 18,
+    fontSize: 15,
     fontWeight: "700",
     color: "#fff",
     flex: 1,
   },
-
+  subtitle: {
+    fontSize: 15,
+    fontWeight: "700",
+    color: "#fff",
+  },
   pageInfoContainer: {
     flexDirection: "row",
     alignItems: "center",
@@ -172,24 +179,14 @@ const styles = StyleSheet.create({
     marginLeft: 6,
     fontWeight: "500",
   },
-
   card: {
     flex: 1,
     overflow: "hidden",
-    marginHorizontal: 8,
-    marginBottom: 8,
-    borderRadius: 12,
-    elevation: 5,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.15,
-    shadowRadius: 5,
   },
   pdf: {
     flex: 1,
     width: Dimensions.get("window").width,
   },
-
   loader: {
     flex: 1,
     justifyContent: "center",

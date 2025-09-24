@@ -1,6 +1,6 @@
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
-import { Pressable, StyleSheet, View, ScrollView, Alert, useColorScheme, StatusBar } from 'react-native';
+import { Pressable, StyleSheet, View, ScrollView, Alert, useColorScheme } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useState, useMemo } from 'react';
 import { Ionicons } from '@expo/vector-icons';
@@ -9,13 +9,10 @@ import { Picker } from '@react-native-picker/picker';
 import examsDataRaw from '../../data/data.json';
 import CustomButton from '@/components/custom/CustomButton';
 
-type subPaper = { year: number; paper_title: string; link: string };
 type Paper = { part?: number; year: number; paper_title: string; link: string };
 type ExamCategory = {
   name: string;
   papers: Paper[];
-  subName?: string;
-  subPaper?: subPaper[];
 };
 type Exam = { title: string; categories: ExamCategory[] };
 
@@ -31,7 +28,6 @@ export default function GetStartTab() {
   const [selectedCategory, setSelectedCategory] = useState('');
   const [selectedYear, setSelectedYear] = useState<string>('');
   const [selectedPart, setSelectedPart] = useState<string>('');
-  const [selectedSubcategory, setSelectedSubcategory] = useState<string>('');
 
   const filteredExams = useMemo(() => {
     if (!searchText.trim()) return examsData;
@@ -45,28 +41,7 @@ export default function GetStartTab() {
   const selectedCategoryObj = categories.find((c) => c.name === selectedCategory);
   const papers = selectedCategoryObj?.papers ?? [];
 
-  const needsSubcategory =
-    selectedCategory === 'සද්ධර්මචාර්ය' ||
-    selectedCategory === 'සද්ධර්ම විශාරද';
-
-  const selectedSubPapers = useMemo(() => {
-    if (needsSubcategory && selectedSubcategory === 'සාමාන්‍ය ඥානය') {
-      return selectedCategoryObj?.subPaper ?? [];
-    }
-    return [];
-  }, [needsSubcategory, selectedSubcategory, selectedCategoryObj]);
-
   const uniqueYearPapers = useMemo(() => {
-    if (selectedSubPapers.length > 0) {
-      const map = new Map<number, subPaper>();
-      selectedSubPapers.forEach((p) => {
-        if (!map.has(p.year)) {
-          map.set(p.year, p);
-        }
-      });
-      return Array.from(map.values());
-    }
-
     const map = new Map<number, Paper>();
     papers.forEach((p) => {
       if (!map.has(p.year)) {
@@ -74,18 +49,15 @@ export default function GetStartTab() {
       }
     });
     return Array.from(map.values());
-  }, [papers, selectedSubPapers]);
+  }, [papers]);
+
 
   const selectedYearPapers = useMemo(() => {
     if (!selectedYear) return [];
     const year = parseInt(selectedYear);
 
-    if (selectedSubPapers.length > 0) {
-      return selectedSubPapers.filter((p) => p.year === year);
-    }
-
     return papers.filter((p) => p.year === year);
-  }, [selectedYear, papers, selectedSubPapers]);
+  }, [selectedYear, papers]);
 
   const selectedPaper =
     selectedYearPapers.length > 0 ? selectedYearPapers[0] : undefined;
@@ -102,7 +74,7 @@ export default function GetStartTab() {
       }
       style={{ flex: 1 }}
     >
-     
+
       <ScrollView
         contentContainerStyle={{ flexGrow: 1 }}
         keyboardShouldPersistTaps="handled"
@@ -133,7 +105,7 @@ export default function GetStartTab() {
 
         <ThemedView style={styles.container}>
           <ThemedText style={[styles.title, { color: isDark ? '#f9fafb' : '#1F2937' }]}>
-            ශ්‍රී ලංකා ත්‍රිපිටක විභාගයට අදාළ ප්‍රශ්න පත්‍ර
+            ශ්‍රී ලංකා ත්‍රිපිටක විභාගයට අදාළ පසුගිය ප්‍රශ්න පත්‍ර
           </ThemedText>
 
           <ThemedView style={styles.section}>
@@ -150,7 +122,6 @@ export default function GetStartTab() {
                   setSelectedCategory('');
                   setSelectedYear('');
                   setSelectedPart('');
-                  setSelectedSubcategory('');
                 }}
                 style={[styles.dropdown, { color: isDark ? '#f3f4f6' : '#1F2937' }]}
               >
@@ -168,7 +139,6 @@ export default function GetStartTab() {
                   setSelectedCategory(itemValue);
                   setSelectedYear('');
                   setSelectedPart('');
-                  setSelectedSubcategory('');
                 }}
                 style={[styles.dropdown, { color: isDark ? '#f3f4f6' : '#1F2937' }]}
               >
@@ -178,20 +148,6 @@ export default function GetStartTab() {
                 ))}
               </Picker>
             </View>
-
-            {/* Subcategory Dropdown */}
-            {needsSubcategory && (
-              <View style={[styles.dropdownWrapper, isDark && { backgroundColor: '#111', borderColor: '#333' }]}>
-                <Picker
-                  selectedValue={selectedSubcategory}
-                  onValueChange={(itemValue) => setSelectedSubcategory(itemValue)}
-                  style={[styles.dropdown, { color: isDark ? '#f3f4f6' : '#1F2937' }]}
-                >
-                  <Picker.Item label="සද්ධර්ම විශාරද" value="සද්ධර්ම විශාරද" />
-                  <Picker.Item label="සාමාන්‍ය ඥානය" value="සාමාන්‍ය ඥානය" />
-                </Picker>
-              </View>
-            )}
 
             {/* Paper Dropdown (Year) */}
             <View style={[styles.dropdownWrapper, isDark && { backgroundColor: '#111', borderColor: '#333' }]}>
@@ -236,12 +192,8 @@ export default function GetStartTab() {
 
             {/* Selected Info */}
             <ThemedText style={[styles.selectedInfo, { color: isDark ? '#d1d5db' : '#4B5563' }]}>
-              {selectedExam && selectedCategory && selectedPaper
-                ? `ඔබ තෝරාගත්තේ: ${selectedExam} → ${selectedCategory}${needsSubcategory && selectedSubcategory
-                  ? ` → ${selectedSubcategory}`
-                  : ''
-                } → ${selectedPaper.year} - ${selectedPaper.paper_title}${selectedPart ? ` (Part ${selectedPart})` : ''
-                }`
+              {selectedExam && selectedCategory && selectedPaper || selectedPart
+                ? `ඔබ තෝරාගත්තේ: ${selectedExam} → ${selectedCategory} → ${selectedPaper.year} - ${selectedPaper.paper_title}${selectedPart ? ` (Part ${selectedPart})` : ''}`
                 : 'කරුණාකර සියල්ල තෝරන්න'}
             </ThemedText>
 
@@ -270,13 +222,13 @@ export default function GetStartTab() {
                       paperTitle: selectedPaper.paper_title,
                       paperLink: linkToSend,
                       part: selectedPart,
-                      subcategory: selectedSubcategory,
+                      year: selectedYear,
                     },
                   });
                 } else {
                   Alert.alert(
                     'සැලකිය යුතුයි',
-                    'කරුණාකර විභාගය, කාණ්ඩය, සහ පත්‍රය තෝරන්න.'
+                    'කරුණාකර විභාගය, කාණ්ඩය, වර්ෂය සහ පත්‍රය තෝරන්න.'
                   );
                 }
               }}

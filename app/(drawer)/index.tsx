@@ -19,7 +19,7 @@ export default function HomeScreen() {
   const colorScheme = useColorScheme();
   const isDark = colorScheme === 'dark';
 
-  const darkColors = ['#000000', '#0a0a0a']; // Pure dark gradient
+  const darkColors = ['#000000', '#0a0a0a']; 
   const lightColors = ['#F7F4EF', '#ffeac6ff'];
 
   return (
@@ -38,7 +38,7 @@ export default function HomeScreen() {
             {
               backgroundColor: isDark
                 ? 'rgba(255,255,255,0.1)'
-                : 'rgba(0,0,0,0.05)',
+                : 'rgba(255,255,255,0.8)',
             },
           ]}
         >
@@ -98,7 +98,7 @@ export default function HomeScreen() {
         <ThemedText
           style={[styles.footertitle, { color: isDark ? '#6B7280' : '#6B7280' }]}
         >
-          © v1.0.0 • Powered by E - Marketing Paradice
+          © v1.0.0 • Powered by E - Marketing Paradice Design Lab
         </ThemedText>
       </ThemedView>
     </LinearGradient>

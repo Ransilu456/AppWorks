@@ -63,7 +63,7 @@ export default function SevaawaScreen() {
           <ThemedText
             style={[styles.highlight, { color: isDark ? '#f9fafb' : '#000' }]}
           >
-            E Marketing Paradice
+            E Marketing Paradice Design Lab
           </ThemedText>{' '}
           වෙත ඔබව සාදරයෙන් පිළිගනිමු. අපගේ අරමුණ වන්නේ ඔබේ ව්‍යාපාරය ඩිජිටල්
           ලොව තුළ නිර්මාණාත්මක සහ විශ්වසනීය විසඳුම් සමඟ වර්ධනය කරවීමයි.

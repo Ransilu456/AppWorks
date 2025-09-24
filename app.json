@@ -17,7 +17,7 @@
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
-      "package": "com.emarketing.thripitaka"
+      "package": "com.emarketing.application"
     },
     "web": {
       "bundler": "metro",

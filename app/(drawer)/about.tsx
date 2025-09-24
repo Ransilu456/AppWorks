@@ -58,7 +58,7 @@ export default function AboutScreen() {
               { color: isDark ? "#f9fafb" : "#222" },
             ]}
           >
-            DP Education • E - Marketing Paradise
+           E - Marketing Paradice Design Lab
           </ThemedText>
 
           <ThemedText
@@ -93,7 +93,7 @@ export default function AboutScreen() {
           <ThemedText
             style={[styles.footer, { color: isDark ? "#6B7280" : "#AAA" }]}
           >
-            © 2025 DP Education.
+           © {new Date().getFullYear()} E - Marketing Paradice Design Lab.
           </ThemedText>
         </ThemedView>
       </ThemedView>

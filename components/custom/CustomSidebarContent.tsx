@@ -47,7 +47,7 @@ export default function SidebarContent(props: any) {
             { color: isDark ? '#aaa' : '#6B7280' },
           ]}
         >
-          © 2025 E - Marketing Paradice. All rights reserved.
+          © {new Date().getFullYear()} E - Marketing Paradice Design Lab. All rights reserved.
         </ThemedText>
         <ThemedText
           style={[
