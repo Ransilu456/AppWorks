@@ -67,7 +67,11 @@
           { "year": 2021, "part": 2, "paper_title": "සූත්‍ර පිටකය", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/b76c7e6939c12aa7df63b02830aeede57c9dface/Papers/TA/TAS/2021%20S%20Acharya%20Suthra%202.pdf" },
           { "year": 2021, "part": 3, "paper_title": "සූත්‍ර පිටකය", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/b76c7e6939c12aa7df63b02830aeede57c9dface/Papers/TA/TAS/2021%20S%20Acharya%20Suthra%203.pdf" },
 
-          { "year": 2024, "part": 1, "paper_title": "සූත්‍ර පිටකය", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/b76c7e6939c12aa7df63b02830aeede57c9dface/Papers/TA/TAS/2024%20S%20Acharya%20Suthra%201.pdf" },
+          { "year": 2022, "part": 1, "paper_title": "සූත්‍ර පිටකය", "link": "https://raw.githubusercontent.com/Ransilu456/PDFReady/79b960f3f6ef542484ebf8fb7a1a9a2e6ece57b7/Papers/TA/TAS/2022%20S%20Acharya%20Suthra%201.pdf" },
+          { "year": 2022, "part": 2, "paper_title": "සූත්‍ර පිටකය", "link": "https://raw.githubusercontent.com/Ransilu456/PDFReady/79b960f3f6ef542484ebf8fb7a1a9a2e6ece57b7/Papers/TA/TAS/2022%20S%20Acharya%20Suthra%202.pdf" },
+          { "year": 2022, "part": 3, "paper_title": "සූත්‍ර පිටකය", "link": "https://raw.githubusercontent.com/Ransilu456/PDFReady/79b960f3f6ef542484ebf8fb7a1a9a2e6ece57b7/Papers/TA/TAS/2022%20S%20Acharya%20Suthra%203.pdf" },
+
+          { "year": 2024, "part": 1, "paper_title": "සූත්‍ර පිටකය", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/b76c7e6939c12aa7df63b02830aeede57c9dface/Papers/TA/TAS/2024%20S%20Acharya%20suthra%201.pdf" },
           { "year": 2024, "part": 2, "paper_title": "සූත්‍ර පිටකය", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/b76c7e6939c12aa7df63b02830aeede57c9dface/Papers/TA/TAS/2024%20S%20Acharya%20Suthra%202.pdf" },
           { "year": 2024, "part": 3, "paper_title": "සූත්‍ර පිටකය", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/b76c7e6939c12aa7df63b02830aeede57c9dface/Papers/TA/TAS/2024%20S%20Acharya%20Suthra%203.pdf" }
         ]
@@ -96,6 +100,10 @@
           { "year": 2021, "part": 2, "paper_title": "විනය පිටකය", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/711d06c7c3802c1cc4f6d570f2f3317d2ebdeea7/Papers/TA/TAV/2021%20V%20Acharya%20Vinaya%202.pdf" },
           { "year": 2021, "part": 3, "paper_title": "විනය පිටකය", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/711d06c7c3802c1cc4f6d570f2f3317d2ebdeea7/Papers/TA/TAV/2021%20V%20Acharya%20Vinaya%203.pdf" },
 
+          { "year": 2022, "part": 1, "paper_title": "විනය පිටකය", "link": "https://raw.githubusercontent.com/Ransilu456/PDFReady/79b960f3f6ef542484ebf8fb7a1a9a2e6ece57b7/Papers/TA/TAV/2022%20V%20Acharya%20Vinaya%201.pdf" },
+          { "year": 2022, "part": 2, "paper_title": "විනය පිටකය", "link": "https://raw.githubusercontent.com/Ransilu456/PDFReady/79b960f3f6ef542484ebf8fb7a1a9a2e6ece57b7/Papers/TA/TAV/2022%20V%20Acharya%20Vinaya%202.pdf" },
+          { "year": 2022, "part": 3, "paper_title": "විනය පිටකය", "link": "https://raw.githubusercontent.com/Ransilu456/PDFReady/79b960f3f6ef542484ebf8fb7a1a9a2e6ece57b7/Papers/TA/TAV/2022%20V%20Acharya%20Vinaya%203.pdf" },
+
           { "year": 2024, "part": 1, "paper_title": "විනය පිටකය", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/711d06c7c3802c1cc4f6d570f2f3317d2ebdeea7/Papers/TA/TAV/2024%20V%20Acharya%20Vinaya%201.pdf" },
           { "year": 2024, "part": 2, "paper_title": "විනය පිටකය", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/711d06c7c3802c1cc4f6d570f2f3317d2ebdeea7/Papers/TA/TAV/2024%20V%20Acharya%20Vinaya%202.pdf" },
           { "year": 2024, "part": 3, "paper_title": "විනය පිටකය", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/711d06c7c3802c1cc4f6d570f2f3317d2ebdeea7/Papers/TA/TAV/2024%20V%20Acharya%20Vinaya%203.pdf" }
@@ -108,25 +116,29 @@
           { "year": 2017, "part": 2, "paper_title": " අභිධර්මාචාර්ය පිටකය", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/6ff02f2794c24fb9811c0c29a8bdf992a9c1af5e/Papers/TA/TAA/2017%20A%20Acharya%20abidamma%202.pdf" },
           { "year": 2017, "part": 3, "paper_title": " අභිධර්මාචාර්ය පිටකය", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/6ff02f2794c24fb9811c0c29a8bdf992a9c1af5e/Papers/TA/TAA/2017%20A%20Acharya%20abidamma%203.pdf" },
          
-          { "year": 2018, "part": 1, "paper_title": " අභිධර්මාචාර්ය පිටකය", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/6ff02f2794c24fb9811c0c29a8bdf992a9c1af5e/Papers/TA/TAA/2017%20A%20Acharya%20abidamma%201.pdf" },
-          { "year": 2018, "part": 2, "paper_title": " අභිධර්මාචාර්ය පිටකය", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/6ff02f2794c24fb9811c0c29a8bdf992a9c1af5e/Papers/TA/TAA/2017%20A%20Acharya%20abidamma%202.pdf" },
-          { "year": 2018, "part": 3, "paper_title": " අභිධර්මාචාර්ය පිටකය", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/6ff02f2794c24fb9811c0c29a8bdf992a9c1af5e/Papers/TA/TAA/2017%20A%20Acharya%20abidamma%203.pdf" },
+          { "year": 2018, "part": 1, "paper_title": " අභිධර්මාචාර්ය පිටකය", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/6ff02f2794c24fb9811c0c29a8bdf992a9c1af5e/Papers/TA/TAA/2018%20A%20Acharya%20abidamma%201.pdf" },
+          { "year": 2018, "part": 2, "paper_title": " අභිධර්මාචාර්ය පිටකය", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/6ff02f2794c24fb9811c0c29a8bdf992a9c1af5e/Papers/TA/TAA/2018%20A%20Acharya%20abidamma%202.pdf" },
+          { "year": 2018, "part": 3, "paper_title": " අභිධර්මාචාර්ය පිටකය", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/6ff02f2794c24fb9811c0c29a8bdf992a9c1af5e/Papers/TA/TAA/2018%20A%20Acharya%20abidamma%203.pdf" },
 
-          { "year": 2019, "part": 1, "paper_title": " අභිධර්මාචාර්ය පිටකය", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/6ff02f2794c24fb9811c0c29a8bdf992a9c1af5e/Papers/TA/TAA/2017%20A%20Acharya%20abidamma%201.pdf" },
-          { "year": 2019, "part": 2, "paper_title": " අභිධර්මාචාර්ය පිටකය", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/6ff02f2794c24fb9811c0c29a8bdf992a9c1af5e/Papers/TA/TAA/2017%20A%20Acharya%20abidamma%202.pdf" },
-          { "year": 2019, "part": 3, "paper_title": " අභිධර්මාචාර්ය පිටකය", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/6ff02f2794c24fb9811c0c29a8bdf992a9c1af5e/Papers/TA/TAA/2017%20A%20Acharya%20abidamma%203.pdf" },
+          { "year": 2019, "part": 1, "paper_title": " අභිධර්මාචාර්ය පිටකය", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/6ff02f2794c24fb9811c0c29a8bdf992a9c1af5e/Papers/TA/TAA/2019%20A%20Acharya%20abidamma%201.pdf" },
+          { "year": 2019, "part": 2, "paper_title": " අභිධර්මාචාර්ය පිටකය", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/6ff02f2794c24fb9811c0c29a8bdf992a9c1af5e/Papers/TA/TAA/2019%20A%20Acharya%20abidamma%202.pdf" },
+          { "year": 2019, "part": 3, "paper_title": " අභිධර්මාචාර්ය පිටකය", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/6ff02f2794c24fb9811c0c29a8bdf992a9c1af5e/Papers/TA/TAA/2019%20A%20Acharya%20abidamma%203.pdf" },
 
-          { "year": 2020, "part": 1, "paper_title": " අභිධර්මාචාර්ය පිටකය", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/6ff02f2794c24fb9811c0c29a8bdf992a9c1af5e/Papers/TA/TAA/2017%20A%20Acharya%20abidamma%201.pdf" },
-          { "year": 2020, "part": 2, "paper_title": " අභිධර්මාචාර්ය පිටකය", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/6ff02f2794c24fb9811c0c29a8bdf992a9c1af5e/Papers/TA/TAA/2017%20A%20Acharya%20abidamma%202.pdf" },
-          { "year": 2020, "part": 3, "paper_title": " අභිධර්මාචාර්ය පිටකය", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/6ff02f2794c24fb9811c0c29a8bdf992a9c1af5e/Papers/TA/TAA/2017%20A%20Acharya%20abidamma%203.pdf" },
+          { "year": 2020, "part": 1, "paper_title": " අභිධර්මාචාර්ය පිටකය", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/6ff02f2794c24fb9811c0c29a8bdf992a9c1af5e/Papers/TA/TAA/2020%20A%20Acharya%20abidamma%201.pdf" },
+          { "year": 2020, "part": 2, "paper_title": " අභිධර්මාචාර්ය පිටකය", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/6ff02f2794c24fb9811c0c29a8bdf992a9c1af5e/Papers/TA/TAA/2020%20A%20Acharya%20abidamma%202.pdf" },
+          { "year": 2020, "part": 3, "paper_title": " අභිධර්මාචාර්ය පිටකය", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/6ff02f2794c24fb9811c0c29a8bdf992a9c1af5e/Papers/TA/TAA/2020%20A%20Acharya%20abidamma%203.pdf" },
 
-          { "year": 2021, "part": 1, "paper_title": " අභිධර්මාචාර්ය පිටකය", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/6ff02f2794c24fb9811c0c29a8bdf992a9c1af5e/Papers/TA/TAA/2017%20A%20Acharya%20abidamma%201.pdf" },
-          { "year": 2021, "part": 2, "paper_title": " අභිධර්මාචාර්ය පිටකය", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/6ff02f2794c24fb9811c0c29a8bdf992a9c1af5e/Papers/TA/TAA/2017%20A%20Acharya%20abidamma%202.pdf" },
-          { "year": 2021, "part": 3, "paper_title": " අභිධර්මාචාර්ය පිටකය", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/6ff02f2794c24fb9811c0c29a8bdf992a9c1af5e/Papers/TA/TAA/2017%20A%20Acharya%20abidamma%203.pdf" },
+          { "year": 2021, "part": 1, "paper_title": " අභිධර්මාචාර්ය පිටකය", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/6ff02f2794c24fb9811c0c29a8bdf992a9c1af5e/Papers/TA/TAA/2021%20A%20Acharya%20abidamma%201.pdf" },
+          { "year": 2021, "part": 2, "paper_title": " අභිධර්මාචාර්ය පිටකය", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/6ff02f2794c24fb9811c0c29a8bdf992a9c1af5e/Papers/TA/TAA/2021%20A%20Acharya%20abidamma%202.pdf" },
+          { "year": 2021, "part": 3, "paper_title": " අභිධර්මාචාර්ය පිටකය", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/6ff02f2794c24fb9811c0c29a8bdf992a9c1af5e/Papers/TA/TAA/2021%20A%20Acharya%20abidamma%203.pdf" },
 
-          { "year": 2024, "part": 1, "paper_title": " අභිධර්මාචාර්ය පිටකය", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/6ff02f2794c24fb9811c0c29a8bdf992a9c1af5e/Papers/TA/TAA/2017%20A%20Acharya%20abidamma%201.pdf" },
-          { "year": 2024, "part": 2, "paper_title": " අභිධර්මාචාර්ය පිටකය", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/6ff02f2794c24fb9811c0c29a8bdf992a9c1af5e/Papers/TA/TAA/2017%20A%20Acharya%20abidamma%202.pdf" },
-          { "year": 2024, "part": 3, "paper_title": " අභිධර්මාචාර්ය පිටකය", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/6ff02f2794c24fb9811c0c29a8bdf992a9c1af5e/Papers/TA/TAA/2017%20A%20Acharya%20abidamma%203.pdf" }
+          { "year": 2022, "part": 1, "paper_title": " අභිධර්මාචාර්ය පිටකය", "link": "https://raw.githubusercontent.com/Ransilu456/PDFReady/79b960f3f6ef542484ebf8fb7a1a9a2e6ece57b7/Papers/TA/TAA/2022%20A%20Acharya%20abidamma%201.pdf" },
+          { "year": 2022, "part": 2, "paper_title": " අභිධර්මාචාර්ය පිටකය", "link": "https://raw.githubusercontent.com/Ransilu456/PDFReady/79b960f3f6ef542484ebf8fb7a1a9a2e6ece57b7/Papers/TA/TAA/2022%20A%20Acharya%20abidamma%202.pdf" },
+          { "year": 2022, "part": 3, "paper_title": " අභිධර්මාචාර්ය පිටකය", "link": "https://raw.githubusercontent.com/Ransilu456/PDFReady/79b960f3f6ef542484ebf8fb7a1a9a2e6ece57b7/Papers/TA/TAA/2022%20A%20Acharya%20abidamma%203.pdf" },
+
+          { "year": 2024, "part": 1, "paper_title": " අභිධර්මාචාර්ය පිටකය", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/6ff02f2794c24fb9811c0c29a8bdf992a9c1af5e/Papers/TA/TAA/2024%20A%20Acharya%20abidamma%201.pdf" },
+          { "year": 2024, "part": 2, "paper_title": " අභිධර්මාචාර්ය පිටකය", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/6ff02f2794c24fb9811c0c29a8bdf992a9c1af5e/Papers/TA/TAA/2024%20A%20Acharya%20abidamma%202.pdf" },
+          { "year": 2024, "part": 3, "paper_title": " අභිධර්මාචාර්ය පිටකය", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/6ff02f2794c24fb9811c0c29a8bdf992a9c1af5e/Papers/TA/TAA/2024%20A%20Acharya%20abidamma%203.pdf" }
         ]
       },
       {   
@@ -134,7 +146,7 @@
         "papers": [
           { "year": 2017, "paper_title": "සාමාන්‍ය ඥානය", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/b76c7e6939c12aa7df63b02830aeede57c9dface/Papers/TA/TASS/2017%20S%20Acharya%20Samanya.pdf" },
           { "year": 2018, "paper_title": "සාමාන්‍ය ඥානය", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/b76c7e6939c12aa7df63b02830aeede57c9dface/Papers/TA/TASS/2018%20S%20Acharya%20Samanya.pdf" },
-          { "year": 2019, "paper_title": "සාමාන්‍ය ඥානය", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/b76c7e6939c12aa7df63b02830aeede57c9dface/Papers/TA/TASS/2019%20S%20Acharya%20Samanya.pdf" },
+          { "year": 2019, "paper_title": "සාමාන්‍ය ඥානය", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/b7262167166f9c6f32c3b8e5ee4c05af813fba90/Papers/TA/TASS/2019%20S%20Acharya%20Smanya.pdf" },
           { "year": 2020, "paper_title": "සාමාන්‍ය ඥානය", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/b76c7e6939c12aa7df63b02830aeede57c9dface/Papers/TA/TASS/2020%20S%20Acharya%20Samanya.pdf" },
           { "year": 2021, "paper_title": "සාමාන්‍ය ඥානය", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/b7262167166f9c6f32c3b8e5ee4c05af813fba90/Papers/TA/TASS/2021%20S%20Acharya%20Samanya.pdf" },
           { "year": 2022, "paper_title": "සාමාන්‍ය ඥානය", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/b7262167166f9c6f32c3b8e5ee4c05af813fba90/Papers/TA/TASS/2022%20S%20Acharya%20Samanya%20(2).pdf" },
@@ -225,7 +237,7 @@
           { "year": 2018, "part": 3, "paper_title": "අභිධර්ම විශාරද", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/a3092586f29d30898786226e85de1ff664f4d941/Papers/TVP/Abhidharma/2018%20A%20Visharada%20abidamma%203.pdf" },
 
           { "year": 2019, "part": 1, "paper_title": "අභිධර්ම විශාරද", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/a3092586f29d30898786226e85de1ff664f4d941/Papers/TVP/Abhidharma/2019%20A%20Visharada%20abidamma%201.pdf" },
-          { "year": 2019, "part": 2, "paper_title": "අභිධර්ම විශාරද", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/a3092586f29d30898786226e85de1ff664f4d941/Papers/TVP/Abhidharma/201920A%20Visharada%20abidamma%202.pdf" },
+          { "year": 2019, "part": 2, "paper_title": "අභිධර්ම විශාරද", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/b7262167166f9c6f32c3b8e5ee4c05af813fba90/Papers/TVP/Abhidharma/2019%20A%20Visharada%20abidamma%202.pdf" },
           { "year": 2019, "part": 3, "paper_title": "අභිධර්ම විශාරද", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/a3092586f29d30898786226e85de1ff664f4d941/Papers/TVP/Abhidharma/2019%20A%20Visharada%20abidamma%203.pdf" },
          
           { "year": 2020, "part": 1, "paper_title": "අභිධර්ම විශාරද", "link": "https://raw.githubusercontent.com/Chamindu456/PDFReady/a3092586f29d30898786226e85de1ff664f4d941/Papers/TVP/Abhidharma/2020%20A%20Visharada%20abidamma%201.pdf" },
