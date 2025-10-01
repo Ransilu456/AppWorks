@@ -17,12 +17,12 @@
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
-      "package": "com.emarketing.application"
+      "package": "com.emarketing_thripitaka.application"
     },
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/last.png"
+      "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
       "expo-router",
@@ -39,7 +39,10 @@
       "typedRoutes": true
     },
     "extra": {
-      "router": {}
+      "router": {},
+      "eas": {
+        "projectId": "09d636c8-c8ce-4057-93af-be7c85fe4ac5"
+      }
     }
   }
 }
