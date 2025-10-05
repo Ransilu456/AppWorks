@@ -153,7 +153,7 @@ export default function PapersTab() {
           {/* Paper Preview */}
           <View style={styles.imageWrapper}>
             <ImageBackground
-              source={{ uri: 'https://images.unsplash.com/photo-1521295121783-8a321d551ad2' }}
+              source={require("@/assets/background_app.jpeg")}
               style={styles.imageHeader}
               imageStyle={styles.imageRounded}
             >
@@ -324,10 +324,10 @@ const getStyles = (isDark: boolean) =>
       marginVertical: 20,
       borderRadius: 24,
       overflow: 'hidden',
-      shadowColor: '#000',
+     /* shadowColor: '#000',
       shadowOpacity: 0.25,
       shadowRadius: 10,
-      elevation: 6,
+      elevation: 6,*/
     },
     imageHeader: {
       height: 260,
